@@ -154,7 +154,7 @@ exporting 172.31.16.0/20:/mnt/logs
 exporting 172.31.16.0/20:/mnt/apps
 ```
 
-##Port 2049 opened by NFS, allowed this port number from webserver IP alongside port 111 in the SG of the NFS instance
+### Port 2049 opened by NFS, allowed this port number from webserver IP alongside port 111 in the SG of the NFS instance
 
 ```
 [root@ip-172-31-30-203 for-my-repo]# rpcinfo -p | grep nfs
