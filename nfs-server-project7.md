@@ -4,7 +4,7 @@
 
 **Description:** 3 new volumes (10GB each) were created in the same AZ as the storage instance. The volume were attached to the storage instance, then partitioned with gdisk utility
 
-# Viewing the newly added LVM partitions 
+### Viewing the newly added LVM partitions ###
 
 ```
 [root@ip-172-31-30-203 ec2-user]# lsblk
