@@ -1,4 +1,9 @@
-# Added 3 new volumes and attached them to the nfs storage instance
+# Working on the NFS storage  instance
+
+### Added  new volumes and attached them to the nfs storage instance ###
+
+**Description:** 3 new volumes (10GB each) were created in the same AZ as the storage instance. The volume were attached to the storage instance, then partitioned with gdisk utility
+
 # Viewing the newly added LVM partitions 
 
 ```
