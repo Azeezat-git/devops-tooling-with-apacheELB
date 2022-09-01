@@ -1,4 +1,4 @@
-#Added 3 new volumes and attached them to the nfs storage instance
+# Added 3 new volumes and attached them to the nfs storage instance
 # Viewing the newly added LVM partitions 
 
 ```
