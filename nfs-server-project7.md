@@ -129,5 +129,36 @@ tmpfs                          81M     0   81M   0% /run/user/1000
 /dev/mapper/nfs--vg-lv--logs  9.0G   97M  8.9G   2% /mnt/logs
 ```
 
-   
+### Installed NFS server with `yum install nfs-utils -y`, then started and enabled service.
 
+```
+[root@ip-172-31-30-203 for-my-repo]# systemctl status nfs-server.service
+● nfs-server.service - NFS server and services
+   Loaded: loaded (/usr/lib/systemd/system/nfs-server.service; enabled; vendor preset: disabled)
+   Active: active (exited) since Thu 2022-09-01 09:07:24 UTC; 22s ago
+ Main PID: 63042 (code=exited, status=0/SUCCESS)
+    Tasks: 0 (limit: 4700)
+   Memory: 0B
+   CGroup: /system.slice/nfs-server.service
+
+Sep 01 09:07:23 ip-172-31-30-203.ec2.internal systemd[1]: Starting NFS server and services...
+Sep 01 09:07:24 ip-172-31-30-203.ec2.internal systemd[1]: Started NFS server and services.
+```   
+
+### Viewing `exportfs -arv`after adding the required file systems in `/etc/exports` ###
+
+```
+[root@ip-172-31-30-203 for-my-repo]# exportfs -arv
+exporting 172.31.16.0/20:/mnt/opt
+exporting 172.31.16.0/20:/mnt/logs
+exporting 172.31.16.0/20:/mnt/apps
+```
+
+##Port 2049 opened by NFS, allowed this port number from webserver IP alongside port 111 in the SG of the NFS instance
+
+```
+[root@ip-172-31-30-203 for-my-repo]# rpcinfo -p | grep nfs
+    100003    3   tcp   2049  nfs
+    100003    4   tcp   2049  nfs
+    100227    3   tcp   2049  nfs_acl
+```
