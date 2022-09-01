@@ -20,7 +20,7 @@ xvdh    202:112  0  10G  0 disk
 `-xvdh1 202:113  0  10G  0 part 
 ```
 
-### Viewing the complete setup - After creating VG, PV and LV ###
+### Viewing the complete setup - _After creating VG, PV and LV_ ###
 
 ```
 [root@ip-172-31-30-203 ec2-user]# vgdisplay -v
