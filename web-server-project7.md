@@ -1,4 +1,4 @@
-# Working on the 3 web servers
+# Working on the 2 web servers
 
 ### Installed nfs clients on the web instances ###
 
