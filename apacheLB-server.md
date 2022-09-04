@@ -1,7 +1,7 @@
-# Configure Apache As A Load Balancer
+# Configuring Apache As A Load Balancer
 
 
-** Instance: ** Launched an EC2 Ubuntu server and installed apache 2 on it
+**Instance:** Launched an EC2 Ubuntu server and installed apache 2 on it
 
 ### apache service running ###
 
@@ -39,18 +39,18 @@ Sep 04 14:03:26 ip-172-31-25-157 systemd[1]: Started The Apache HTTP Server.
         ProxyPassReverse / balancer://mycluster/
 ```
 
-** Tested connection successfully on http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php **
+**Tested connection successfully on http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php**
 
 ### Configuring Local DNS Names Resolution ###
 
-** Added the below in `/etc/hosts` file **
+**Added the below in `/etc/hosts` file**
 
 ```
 172.31.23.136 Web1
 172.31.22.152 Web2
 ```
 
-** Then updated `/etc/apache2/sites-available/000-default.conf` **
+**Then updated `/etc/apache2/sites-available/000-default.conf`**
 
 ```
 BalancerMember http://Web1:80 loadfactor=5 timeout=1
